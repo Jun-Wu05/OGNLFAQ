@@ -9,6 +9,9 @@
 ### Added
 
 - skill 骨架与版本治理：`SKILL.md` frontmatter（`name` / `description` / `version: 0.1.0`）、部署形态说明、正文结构占位（Issue #9）。
+- 输入三元组约束：skill 入口要求 `样例日志` + `意图` + `期望效果`，缺失引导补齐、`期望效果` 须「应新增字段 xxx，值应为 yyy」形式（Issue #12）。
+- 薄契约注入：三种语法边界契约（`<% %>` / `{% %}` / `%{ }`）逐字同 `docs/eval/README.md` 跑批注入上下文，含首选制输出形态（Issue #10）。
+- FAQ 例子 KB：`kb/faq-examples.md` 按写法分类条目，覆盖大小写转换/三元去空白/split 取位/distinct 去重/域名还原/正则抽邮箱/递归扁平化，与薄契约分离（Issue #11）。
 
 <!--
 后续切片落地时在此追加条目，格式示例：
