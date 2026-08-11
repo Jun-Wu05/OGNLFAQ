@@ -18,6 +18,9 @@
 - 白名单契约侧兜底：SKILL.md 落白名单明文四类（照抄 `lang-ref.md` ognl.whiteList），未列出类不可调用、需给替代写法或说明不可行，暂不强制内置生成后守卫（Issue #18）。
 - 空值/边界防御指引：SKILL.md 落「主动考虑空值/特殊字符，给防御写法或说明限制」指引，不剧透具体坑，与白名单区分边界（Issue #19）。
 - 收藏落盘：SKILL.md 落「跑通表达式存 `docs/favorites/`、跟随仓库 git 管理」指令，条目结构含样例日志/意图/期望效果/跑通表达式/适用语法/验证日期，收藏 ≠ Q&A（Issue #20）。
+- 重点回归集：新增 `tests/l3-regression.md` 与 `tests/edge-regression.md`，固化 L3/edge case、首选制判分和 skill 改动后必跑规则（Issue #21 / #22）。
+- 软硬分离盲区记账：SKILL.md 明确 13 条硬门、4 条软过线、盲区值错 `>= 2` 降级及报错单列口径（Issue #23）。
+- 端到端验证材料：新增 `tests/end-to-end-platform-run.md`，提供地板档/天花板档的新版 skill 实跑记录表；历史结果作为基线，未执行项保持待执行（Issue #24 / #25）。
 
 <!--
 后续切片落地时在此追加条目，格式示例：
