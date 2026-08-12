@@ -12,7 +12,7 @@
 - 输入三元组约束：skill 入口要求 `样例日志` + `意图` + `期望效果`，缺失引导补齐、`期望效果` 须「应新增字段 xxx，值应为 yyy」形式（Issue #12）。
 - 薄契约注入：三种语法边界契约（`<% %>` / `{% %}` / `%{ }`）逐字同 `docs/eval/README.md` 跑批注入上下文，含首选制输出形态（Issue #10）。
 - FAQ 例子 KB：`kb/faq-examples.md` 按写法分类条目，覆盖大小写转换/三元去空白/split 取位/distinct 去重/域名还原/正则抽邮箱/递归扁平化，与薄契约分离（Issue #11）。
-- 按档路由指令：SKILL.md 落「LLM 自读身份，弱档读 KB / 强档直出」指令 + 弱档 model 清单（独立小节、以第二条件跑批结果为准、定期回归），天花板 claude-opus-4-8 直出不读 KB（Issue #13）。
+- 按档路由指令：SKILL.md 落「LLM 自读身份，弱档读 KB / 强档直出」指令 + 弱档 model 清单（独立小节、以第二条件跑批结果为准、定期回归），天花板 claude-opus-4-8 直出不读 KB；并补「身份不可得时默认读 KB」fallback（Issue #13，随 WISCODE 不暴露模型元数据现状修订）。
 - L1/L2/L3 回归必测点 + 陷阱补强：KB 末尾追加「回归必测点与陷阱补强」段，L1 标量类型盲区提示、L2 集合相等判分陷阱、L3 递归抽浅层/未去重陷阱，faq-11 域名去重作重点必测（Issue #14 / #15 / #16）。
 - 诊断式修正循环：SKILL.md 落「贴回报错/输出值 → 给 1–2 个修正方向新表达式，不自动重试」循环指令，修正方向对照期望效果锚点、与首答不同方向（Issue #17）。
 - 白名单契约侧兜底：SKILL.md 落白名单明文四类（照抄 `lang-ref.md` ognl.whiteList），未列出类不可调用、需给替代写法或说明不可行，暂不强制内置生成后守卫（Issue #18）。
@@ -20,7 +20,7 @@
 - 收藏落盘：SKILL.md 落「跑通表达式存 `docs/favorites/`、跟随仓库 git 管理」指令，条目结构含样例日志/意图/期望效果/跑通表达式/适用语法/验证日期，收藏 ≠ Q&A（Issue #20）。
 - 重点回归集：新增 `tests/l3-regression.md` 与 `tests/edge-regression.md`，固化 L3/edge case、首选制判分和 skill 改动后必跑规则（Issue #21 / #22）。
 - 软硬分离盲区记账：SKILL.md 明确 13 条硬门、4 条软过线、盲区值错 `>= 2` 降级及报错单列口径（Issue #23）。
-- 端到端验证材料：新增 `tests/end-to-end-platform-run.md`，提供地板档/天花板档的新版 skill 实跑记录表；历史结果作为基线，未执行项保持待执行（Issue #24 / #25）。
+- 端到端验证材料：新增 `tests/end-to-end-platform-run.md`，当前提供 `Auto/unknown` 黑盒批次实跑记录表（含 runtime model / KB route requested / KB loaded 字段）；历史地板/天花板分档（#24/#25）因无法观测指定模型已废弃、仅作离线基线（Issue #28）。
 
 <!--
 后续切片落地时在此追加条目，格式示例：
